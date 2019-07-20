@@ -25,7 +25,7 @@ class App extends Component {
                 },
                 {
                     title: "Spaghetti",
-                    content: "Noodles, Sauce, and Sausage",
+                    content: "Noodles, Sauce and Sausage",
                     served: "Hot"
                 },
                 {
