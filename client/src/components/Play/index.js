@@ -361,6 +361,17 @@ class Play extends Component {
         
     }
 
+    checkWordArray = () => {
+        for (let x = 0; x < this.state.possibleWords.length; x++) {
+            console.log("ii " +  this.state.possibleWords[x].word);
+            let isWord = this.checkIfItIsAWord(this.state.possibleWords[x].word);
+            // console.log("isWord " + isWord);
+            if (isWord) {
+                // return x;
+                console.log("x is " + x);
+                } }
+            return false
+    }
 
     endOfRound = () => {
         
@@ -369,6 +380,8 @@ class Play extends Component {
         //build array of possible words should be ordered in decreasing point value
         this.buildPossibleWordsArray();
         //go through array of posisble words to check if there is a word
+        let wordIndex = this.checkWordArray();
+        console.log("wordIndex " + wordIndex);
         //give points for word
         //remove letters used from board and update column heights
         
@@ -392,22 +405,18 @@ class Play extends Component {
 
     }
 
-    checkIfItIsAWord = event => {
-        event.preventDefault();
-        const word = this.state.word;
+    checkIfItIsAWord = (word) => {
+        // event.preventDefault();
+        // const word = this.state.word;
         console.log("what is the word " + word);
 
         API.checkWord(word).then(wordData => {
             // if login data is correct
-            console.log(this.props);
-            if (wordData.data !== false) {
-                // update logged in state - redirect to play page?
-                console.log("word exists from client");
-            } else {
-                console.log("word does not exists from client");
-            }
-    })
-}
+            // console.log(this.props);
+            console.log("what is this " + wordData.data);
+            return wordData.data;
+        })
+    }
 
   
     

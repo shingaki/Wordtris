@@ -1,7 +1,7 @@
 {
   "local": {
     "username": "root",
-    "password": "snizz11bre",
+    "password": "",
     "database": "wordtris_db",
     "host": "127.0.0.1",
     "port": 3306,
